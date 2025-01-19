@@ -1,0 +1,6 @@
+- add information about the current temperature in a city after a search for the city
+- add information about the current time in a city after a search for a city
+- add information about the temperature for the previous 24 hours and the past 24 hours in the city
+- add information about the average temperature for the next week
+- add information about the weather for the next 7 days
+- add a graph that shows the temperature for the past 7 days and next 14 days
