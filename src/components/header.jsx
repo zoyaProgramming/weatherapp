@@ -59,7 +59,8 @@ export function TempFetch({currentWeather}){
 
 
   if(currentWeather  == null){
-    return (<h2 className="material-symbols-outlined" style={{color: "white"}}>sync</h2>)
+    return (<h2 className="material-symbols-outlined" 
+      style={{color: "white"}}>sync</h2>)
   } else {
     
     return (
@@ -72,38 +73,29 @@ export function TempFetch({currentWeather}){
 
 export function Header({currentWeather}){
   const [userSelectionData, dispatch] = useContext(UserSelectionContext);
-  console.log(userSelectionData)
-
-
-  if(currentWeather==null){
-    return(
-      <p>
-        loading
-      </p>
-    )
-  }
   const icon = getWeatherAsset(currentWeather.weather_code).icon
   return (
   <>
     <header>
-      <div style={{backgroundColor: "rgb(243, 243, 243)", height: "3vh", width: "100%", borderBottom: ".5px solid rgb(225, 225, 225)",
-        display: "flex", flexDirection: "row",
-        alignItems: "flex-end"
-      }}>
+      <div className='div-top-bar'>
         <TemperatureUnitButton dispatch={dispatch}></TemperatureUnitButton>
       </div>
 
-      <div className='wrap-horizontal' style={{padding: '20px'}}>
-        <div className="wrap-vertical" >
-          <h1 className="title">{userSelectionData.city }</h1>
-          <h2 className="h2-city">{userSelectionData.country}</h2>
+      <div className='wrap-horizontal div-container-header' >
+        <div className="wrap-vertical" style={{}}>
+          <h1 className="title">
+            {userSelectionData.city }
+          </h1>
+          <h2 className="h2-city">
+            {userSelectionData.country}
+          </h2>
         </div>
-        <div style={{flexGrow: 1}}></div>
-        <SearchBar></SearchBar>
-        <div style={{flexGrow: 1}}></div>
-        
+        <div className='wrap-horizontal'>
+          <SearchBar></SearchBar>
         {icon}
         <TempFetch currentWeather={currentWeather}></TempFetch>
+        </div>
+        
       </div>
         
       

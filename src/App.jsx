@@ -3,6 +3,7 @@ import {Header} from './components/header'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import './assets/css/phone.css'
 import './assets/css/header.css'
 import './assets/snow.jpg'
 import Footer from './components/footer'
@@ -34,15 +35,14 @@ function App() {
   }
   
   return (<>
-    <div style={{ height: '100vh', width: '100vw', backgroundImage : `url(${
+    <div className='div-container-outer' style={{ backgroundImage : `url(${
       (currentWeather!==null&&currentWeather!==undefined)?getWeatherAsset(currentWeather.weather_code).image:"http://localhost:5173/src/assets/snow.jpg"
       /*"http://localhost:5173/src/assets/snow.jpg"*/})`,
-    backgroundSize: '150%'}}>
+  }}>
         <UserSelectionContext.Provider value = {[selectionData, dispatchSelectionData]}>
           <Header currentWeather={currentWeather}></Header>
           <Index data={data}/>
           <Footer></Footer>
-          <button onClick={() => {testAPI()}}> click me!</button>
         </UserSelectionContext.Provider>
     </div>
 

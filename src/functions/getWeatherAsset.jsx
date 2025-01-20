@@ -1,3 +1,10 @@
+import clear_sky from "../assets/clear_sky.jpeg";
+import partly_cloudy from "../assets/partly_cloudy.jpg";
+import fog from "../assets/fog.jpeg"
+import thunderstorm from "../assets/stormy.jpg";
+import rainy from "../assets/rainy.jpg"
+import snow2 from "../assets/snow_2.jpg"
+import snow from "../assets/snow.jpg"
 
 /*
 
@@ -45,14 +52,14 @@ export default function getWeatherAsset(weather_code, size=90){
         return {
           description: "sunny",
           icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="40 -920 880 880" fill="#5f6368"><path d="M440-760v-160h80v160h-80Zm266 110-55-55 112-115 56 57-113 113Zm54 210v-80h160v80H760ZM440-40v-160h80v160h-80ZM254-652 140-763l57-56 113 113-56 54Zm508 512L651-255l54-54 114 110-57 59ZM40-440v-80h160v80H40Zm157 300-56-57 112-112 29 27 29 28-114 114Zm283-100q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-160Z"/></svg>,
-          image:   "clear_sky.jpeg"
+          image:   clear_sky
           }
         break;
       case 0:
         return {
           description: "sunny",
           icon: sunny_icon,
-          image:   "clear_sky.jpeg"
+          image:   clear_sky
           }
         break;
       case 1: 
@@ -60,14 +67,14 @@ export default function getWeatherAsset(weather_code, size=90){
         return{
           ...weather,
           icon: (partly_cloudy_icon),
-          image: "partly_cloudy.jpg"
+          image: partly_cloudy
         }
       case 2:
         weather.description ="partly cloudy"
         return{
           description: "partly cloudy",
           icon:  (partly_cloudy_icon),
-          image:  "partly_cloudy.jpg"
+          image:  partly_cloudy
         }
       case 3:
         weather.description ="overcast"
@@ -75,18 +82,18 @@ export default function getWeatherAsset(weather_code, size=90){
         return{
           description: "overcast",
           icon:  ( ( (overcast_icon))),
-          image: "partly_cloudy.jpg"
+          image: partly_cloudy
         }
       case 45:
         return{
           description: " fog",
-          image: "fog.jpeg",
+          image: fog,
           icon:  (fog_icon)
         }
       case 48:
         weather.description ="depositing rime fog"
         return{...weather,
-          image: "fog.jpeg",
+          image: fog,
           icon:  (fog_icon)
         }
         //fog
@@ -95,14 +102,14 @@ export default function getWeatherAsset(weather_code, size=90){
         weather.description ="light drizzle"
         return{
           description: "light drizzle",
-          image: "rainy.jpg",
+          image: rainy,
           icon:  rain_icon
         }
       case 53:
         weather.description ="medium drizzle"
         return{
           description: "medium drizzle",
-          image: "rainy.jpg",
+          image: rainy,
           icon:  rain_icon
         }
 
@@ -110,7 +117,7 @@ export default function getWeatherAsset(weather_code, size=90){
         weather.description ="heavy drizzle"
         return{
           description: "heavy drizzle",
-          image: "rainy.jpg",
+          image: rainy,
           icon:  rain_icon
         }
         // heavy or moderate rain
@@ -134,14 +141,14 @@ export default function getWeatherAsset(weather_code, size=90){
         weather.description ="moderate rain"
         return {
           description: "moderate rain",
-          image: "rainy.jpg",
+          image: rainy,
           icon:  rain_icon
         }
       case 65:
         weather.description ="heavy rain"
         return {
           description: "heavy rain",
-          image: "rainy.jpg",
+          image: rainy,
           icon:  ( (rain_icon))
         }
       case 61:
@@ -149,7 +156,7 @@ export default function getWeatherAsset(weather_code, size=90){
         weather.description ="light rain"
         return {
           description: "light rain",
-          image: "rainy.jpg",
+          image: rainy,
           icon:  ( (rain_icon))
         }
           break;
@@ -158,7 +165,7 @@ export default function getWeatherAsset(weather_code, size=90){
         return{
           description: "freezing rain light intensity",
           icon:  ( (weather_mix_icon)),
-          image: "snow_2.jpg"
+          image: snow2
         }
       case 67:
 
@@ -166,7 +173,7 @@ export default function getWeatherAsset(weather_code, size=90){
         return{
           description: "freezing rain heavy intensity",
           icon:  ( (weather_mix_icon)),
-          image: "snow_2.jpg"
+          image: snow2
         }
         // mixed rain + snow, drizzle
         break;
@@ -174,41 +181,41 @@ export default function getWeatherAsset(weather_code, size=90){
         return{
           description: "snowfall light intensity",
           icon: snow_icon,
-          image: "snow_2.jpg"
+          image: snow2
         }
       case 73:
         weather.description ="snowfall moderate intensity"
         return{
           description: "snowfall moderate intensity",
           icon: snow_icon,
-          image: "snow_2.jpg"
+          image: snow2
         }
       case 75:
         weather.description ="snowfall heavy intensity"
         return{
           description: "snowfall heavy intensity",
           icon: snow_icon,
-          image: "snow_2.jpg"
+          image: snow2
         }
       case 77:
         weather.description ="snow grains"
         return{
           description: "snow grains",
           icon: snow_icon,
-          image: "snow_2.jpg"
+          image: snow2
         }
         // snow fall
         break;
       case 80:
         return({
           description :"rain showers light",
-          image:   "rainy.jpg",
+          image:   rainy,
           icon: rain_light_icon
         })
       case 81:
         return({
           description :"rain showers moderate",
-          image:   "rainy.jpg",
+          image:   rainy,
           icon:  ( (rain_icon))
         })
       case 82:
@@ -216,7 +223,7 @@ export default function getWeatherAsset(weather_code, size=90){
         //rain showers
         return{
           ...weather,
-          image:   "rainy.jpg",
+          image:   rainy,
           icon:  ( (rain_icon))
         }
         break;
@@ -226,7 +233,7 @@ export default function getWeatherAsset(weather_code, size=90){
         return{
           ...weather,
           icon: (snow_icon),
-          image: "snow_2.jpg"
+          image: snow2
         }
       case 86:
         weather.description ="heavy snow showers"
@@ -234,7 +241,7 @@ export default function getWeatherAsset(weather_code, size=90){
         return{
           ...weather,
           icon: <svg xmlns="http://www.w3.org/2000/svg" style={{padding: "auto"}} viewBox="40 -920 880 880"  fill="#5f6368"><path d="M240-200q-17 0-28.5-11.5T200-240q0-17 11.5-28.5T240-280q17 0 28.5 11.5T280-240q0 17-11.5 28.5T240-200Zm480 0q-17 0-28.5-11.5T680-240q0-17 11.5-28.5T720-280q17 0 28.5 11.5T760-240q0 17-11.5 28.5T720-200ZM360-40q-17 0-28.5-11.5T320-80q0-17 11.5-28.5T360-120q17 0 28.5 11.5T400-80q0 17-11.5 28.5T360-40Zm120-160q-17 0-28.5-11.5T440-240q0-17 11.5-28.5T480-280q17 0 28.5 11.5T520-240q0 17-11.5 28.5T480-200ZM600-40q-17 0-28.5-11.5T560-80q0-17 11.5-28.5T600-120q17 0 28.5 11.5T640-80q0 17-11.5 28.5T600-40ZM300-320q-91 0-155.5-64.5T80-540q0-83 55-145t136-73q32-57 87.5-89.5T480-880q90 0 156.5 57.5T717-679q69 6 116 57t47 122q0 75-52.5 127.5T700-320H300Zm0-80h400q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-40q0-66-47-113t-113-47q-48 0-87.5 26T333-704l-10 24h-25q-57 2-97.5 42.5T160-540q0 58 41 99t99 41Zm180-200Z"/></svg>,
-          image: "snow_2.jpg"
+          image: snow2
         }
         break;
       case 95:
@@ -242,7 +249,7 @@ export default function getWeatherAsset(weather_code, size=90){
         return{
           ...weather,
           icon: thunderstorm_icon,
-          image:   "cloudy_2.jpeg"
+          image:   thunderstorm
         }
         // thunderstorm
         
@@ -252,14 +259,14 @@ export default function getWeatherAsset(weather_code, size=90){
         return{
           ...weather,
           icon: (thunderstorm_icon),
-          image:   "cloudy_2.jpeg"
+          image:   thunderstorm
         }
       case 99:
         weather.description ="thunderstorm with heavy hail"
         return{
           ...weather,
           icon: (thunderstorm_icon),
-          image:   "cloudy_2.jpeg"
+          image:   thunderstorm
         }
         //hunderstorm with slight and heavy hail
         break;
@@ -267,13 +274,12 @@ export default function getWeatherAsset(weather_code, size=90){
         return{
           description: "weather code not identified",
           icon: <svg xmlns="http://www.w3.org/2000/svg" style={{padding: "auto"}} viewBox="40 -920 880 880"  fill="#5f6368"><path d="M440-760v-160h80v160h-80Zm266 110-55-55 112-115 56 57-113 113Zm54 210v-80h160v80H760ZM440-40v-160h80v160h-80ZM254-652 140-763l57-56 113 113-56 54Zm508 512L651-255l54-54 114 110-57 59ZM40-440v-80h160v80H40Zm157 300-56-57 112-112 29 27 29 28-114 114Zm283-100q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-160Z"/></svg>,
-          image: "clear_sky.jpeg"
+          image: clear_sky
         }
 */
     }
   }
   const h = helper();
-  h.image = url + h.image;
   h.icon = (<div style={{padding: "auto", height: `${size}px`, width: `${size}px`, marginLeft: "auto", marginRight: "auto", marginTop: "20px", margin: "20px auto 20px auto"}}>{
     h.icon}</div>)
   return h;

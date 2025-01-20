@@ -11,8 +11,23 @@ export  function updateLocalStorage(key, value, dispatch){
   
 }
 
+export function getIsMobile(){
+  const minAspectRatio = "1/2.5"
+  const mediaQuery = window.matchMedia(`(min-aspect-ratio: ${minAspectRatio})`)
+  
+    if(mediaQuery.matches){
+      return true;
+      console.log("This is not a phone!")
+    } else {
+      return false;
+  
+  }
+}
+
+
 export const getAllLocalStorage = () => {
   let obj = {}
+  const isPhone = getIsMobile()
   if(localStorage.length == 0){
     localStorage.setItem("city", "Seattle");
     localStorage.setItem("unit", "celsius");

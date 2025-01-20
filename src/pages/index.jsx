@@ -125,9 +125,10 @@ export  function Detail({data, selected}){
 
     return(
     (<div style={{height: "max-content", width: "100%"}}>
-      <div className="wrap-vertical" style={{backgroundColor: "white", height: 
+      <div className="wrap-vertical div-container-weather-daily" 
+      /*style= {{backgroundColor: "white", height: 
         "30vh", margin: "20px", borderRadius: "20px",
-        alignItems: "center", padding: "20px", gap: "0", justifyContent: 'start'}}>
+        alignItems: "center", padding: "20px", gap: "0", justifyContent: 'start'}}*/>
         <h2 className="h2-city">{selectedDate}</h2>
         <DailyDetails data={data} selected={selected}></DailyDetails>
         <HourlyDetails data={data} selected={selected}></HourlyDetails>
@@ -140,15 +141,13 @@ export default function Index({data}){
   const [selected, setIsSelected] = useState(new Date(Date.now()).getDay());
 
   if(data == null || data == undefined){
-    return (<div style={{height: "max-content", width: "100%"}}>
-    <div className="wrap-horizontal" style={{backgroundColor: "white", height: 
-      "30vh", margin: "20px", borderRadius: "20px",
-      alignItems: "flex-start", padding: "20px", gap: "0"}}>
-      <h1 className="material-symbols-outlined">sync
-      </h1>
-
-    </div>
-  </div>)
+    return (
+    <div style={{height: "max-content", width: "100%"}}>
+      <div className="wrap-horizontal">
+        <h1 className="material-symbols-outlined">sync
+        </h1>
+      </div>
+    </div>)
   }
 
   else{
@@ -156,9 +155,7 @@ export default function Index({data}){
     return(
       <>
       <div style={{height: "max-content", width: "100%"}}>
-        <div className="wrap-horizontal" style={{backgroundColor: "white", height: 
-          "30vh", margin: "20px", borderRadius: "20px",
-          alignItems: "flex-start", padding: "20px", gap: "0"}}>
+        <div className="wrap-horizontal div-container-weather-daily" >
           {daysMapped}
 
         </div>
