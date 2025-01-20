@@ -13,15 +13,15 @@ export function SearchBar(){
   const city = userSelectionData.city;
   return(
     <>
-    <div style={{padding: '20px'}}>
-      <div className="wrap-horizontal">
+    <div style={{padding: '0px', flexGrow: 5}}>
+      <div className="wrap-horizontal" style={{}}>
       
         <p className="material-symbols-outlined" onClick={
           async () => {
             dispatch({type: "city", data: await getCityInformation(ref.current.value)})
           }
         }>search</p>
-        <input ref = {ref} style={{width: "200px", height: "20px", borderRadius: '20px',
+        <input ref = {ref} style={{flexGrow: 1, flexShrink: 1, minWidth: "30vw", height: "5vw", borderRadius: '20px',
           backgroundColor: 'white', border: '1px solid rgb(230, 230, 230)'
         }} onKeyDown={async (event) =>  {
           if(event.keyCode == 13){
